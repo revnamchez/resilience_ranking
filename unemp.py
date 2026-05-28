@@ -17,7 +17,7 @@ st.markdown("""
 """)
 
 st.markdown("""
-**"By: <span style="color: red;">CYNTHIA UDOAKU</span>"**
+**"By: <span style="color: red;">CYNTHIA IFUNANYA UDOAKU</span>"**
 """, unsafe_allow_html=True)
 
 st.markdown("""
