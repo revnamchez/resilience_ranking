@@ -13,7 +13,7 @@ st.set_page_config(page_title="West Africa Resilience Predictor", layout="wide")
 st.title("🌍 West Africa Unemployment AI Predictor")
 
 st.markdown("""
-**"An Explainable AI (XAI) Framework for Modeling Non-Linear Labor Market Decoupling and Resilience: A Case Study of West African Emerging Economies"
+**"An Explainable AI (XAI) Framework for Modeling Non-Linear Labor Market Decoupling and Resilience: A Case Study of West African Emerging Economies"**
 """)
 
 st.markdown("""
