@@ -17,8 +17,8 @@ st.markdown("""
 """)
 
 st.markdown("""
-**"By: CYNTHIA UDOAKU"**
-""")
+**"By: <span style="color: red;">CYNTHIA UDOAKU</span>"**
+""", unsafe_allow_html=True)
 
 st.markdown("""
 **Explainable AI (XAI) Framework:** This dashboard uses an XGBoost Regressor to model the 
