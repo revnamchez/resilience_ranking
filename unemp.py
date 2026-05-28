@@ -17,7 +17,7 @@ st.markdown("""
 """)
 
 st.markdown("""
-**"By: CYNTHIA UDOAKU
+**"By: CYNTHIA UDOAKU"**
 """)
 
 st.markdown("""
