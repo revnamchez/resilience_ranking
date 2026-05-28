@@ -17,6 +17,10 @@ st.markdown("""
 """)
 
 st.markdown("""
+**"By: CYNTHIA UDOAKU
+""")
+
+st.markdown("""
 **Explainable AI (XAI) Framework:** This dashboard uses an XGBoost Regressor to model the 
 non-linear relationship between economic recovery and labor market outcomes.
 """)
