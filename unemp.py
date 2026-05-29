@@ -107,12 +107,13 @@ with tab2:
     image_path = 'pdp_recovery.png'
     if os.path.exists(image_path):
         st.image(image_path, use_column_width=True, caption="Figure: Partial Dependence Plot for Recovery Score Feature")
+        st.caption(""" "While global feature importance identifies 2020 Baseline Shock as the primary macro-structural driver of long-term unemployment variance, local sensitivity analysis reveals that the Economic Recovery Score possesses highly non-linear threshold effects. Consequently, minor marginal changes in the recovery score trigger sharp, immediate fluctuations in labor market coupling, making it the more dynamically volatile policy lever on the dashboard." """)
     else:
         st.info("ℹ️ To display your PDP graph here, save your plot as 'pdp_recovery.png' inside your GitHub repository.")
 
 # 5. Thesis Footer
 st.markdown("---")
-st.caption(""" "While global feature importance identifies 2020 Baseline Shock as the primary macro-structural driver of long-term unemployment variance, local sensitivity analysis reveals that the Economic Recovery Score possesses highly non-linear threshold effects. Consequently, minor marginal changes in the recovery score trigger sharp, immediate fluctuations in labor market coupling, making it the more dynamically volatile policy lever on the dashboard." """)
+
 
 st.markdown("---")
 st.caption("Developed for PhD Thesis: 'A Multi-Method XAI Framework for Non-Linear Labor Market Resilience'")
