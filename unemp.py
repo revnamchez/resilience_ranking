@@ -97,19 +97,41 @@ with tab1:
             st.warning("Please ensure 'resilience_model.json' is in the same folder as this script.")
 
 with tab2:
-    st.subheader("📈 Partial Dependence Analysis")
+    st.subheader("📊 Global Model Insights vs. Local Sensitivity")
     st.write(
-        "This plot demonstrates how the **Economic Recovery Score** marginally impacts the predicted "
-        "Unemployment Rate across all observations, isolating the non-linear relationship."
+        "This section contrasts global feature importance with local non-linear threshold dynamics "
+        "to provide a comprehensive Explainable AI (XAI) overview."
     )
     
-    # Check if the generated image exists in the repository
-    image_path = 'pdp_recovery.png'
-    if os.path.exists(image_path):
-        st.image(image_path, use_column_width=True, caption="Figure: Partial Dependence Plot for Recovery Score Feature")
-        st.caption(""" "While global feature importance identifies 2020 Baseline Shock as the primary macro-structural driver of long-term unemployment variance, local sensitivity analysis reveals that the Economic Recovery Score possesses highly non-linear threshold effects. Consequently, minor marginal changes in the recovery score trigger sharp, immediate fluctuations in labor market coupling, making it the more dynamically volatile policy lever on the dashboard." """)
-    else:
-        st.info("ℹ️ To display your PDP graph here, save your plot as 'pdp_recovery.png' inside your GitHub repository.")
+    # Create two side-by-side columns for your charts
+    col_plot1, col_plot2 = st.columns(2)
+    
+    with col_plot1:
+        st.markdown("### 🏆 Global Feature Importance")
+        st.write("Measures total fractional contribution (**Gain**) across all decision trees.")
+        fi_image_path = 'feature_importance.png'
+        if os.path.exists(fi_image_path):
+            st.image(fi_image_path, use_column_width=True, caption="Figure 1: XGBoost Global Feature Importance (Gain)")
+        else:
+            st.info("ℹ️ Save your feature importance plot as 'feature_importance.png' in your repository.")
+            
+    with col_plot2:
+        st.markdown("### 📈 Partial Dependence Analysis")
+        st.write("Isolates how the marginal variance of **Recovery Score** drives non-linear jumps.")
+        pdp_image_path = 'pdp_recovery.png'
+        if os.path.exists(pdp_image_path):
+            st.image(pdp_image_path, use_column_width=True, caption="Figure 2: Partial Dependence Plot for Recovery Score")
+        else:
+            st.info("ℹ️ Save your PDP plot as 'pdp_recovery.png' in your repository.")
+
+    # Thesis interpretation note at the bottom of the tab
+    st.markdown("---")
+    st.info(
+        "💡 **PhD Analytical Insight:** Note how `baseline_2020` dominates global tree-splits (Figure 1), "
+        "yet `recovery_score` holds sharp, non-linear cliff-edges (Figure 2). This explains why the front-end "
+        "predictions react with extreme sensitivity to changes in recovery scores despite its lower global ranking."
+    )
+
 
 # 5. Thesis Footer
 st.markdown("---")
