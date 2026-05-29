@@ -126,11 +126,13 @@ with tab2:
 
     # Thesis interpretation note at the bottom of the tab
     st.markdown("---")
-    st.info(
-        "💡 **PhD Analytical Insight:** Note how `baseline_2020` dominates global tree-splits (Figure 1), "
-        "yet `recovery_score` holds sharp, non-linear cliff-edges (Figure 2). This explains why the front-end "
-        "predictions react with extreme sensitivity to changes in recovery scores despite its lower global ranking."
-    )
+    st.info("""
+    💡 **PhD Analytical Insight:** 
+    * **Global View (Figure 1):** The overall Feature Importance chart indicates that the **2020 Baseline Shock** is the primary driver setting the background for unemployment predictions.
+    * **Local View (Figure 2):** The Partial Dependence Plot reveals that the **Recovery Score** acts as a sharp threshold trigger. 
+    
+    **Conclusion:** This is exactly why a tiny change in the Recovery Score slider triggers a massive, sudden jump in the final unemployment rate, even though the Baseline Shock ranks higher overall.
+    """)
 
 
 # 5. Thesis Footer
