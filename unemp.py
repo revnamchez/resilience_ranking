@@ -14,7 +14,7 @@ st.markdown("""
 """)
 
 st.markdown("""
-**"By: <span style="color: red;">CYNTHIA IFUNANYA UDOAKU</span>"**
+**"By: <span style="color: red;">CYNTHIA IFUNANYA UDOAKU & Dr. NNAEMEKA U. EZEONYI</span>"**
 """, unsafe_allow_html=True)
 
 st.markdown("""
